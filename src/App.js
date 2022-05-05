@@ -1,169 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Country from './containers/country/country';
+import City from './containers/country/city';
 
 
 
 function App() {
 
-  let data = 
-  [
-    {
-      id: 101,
-      name: 'Abacavir',
-      quantity: 25,
-      price: 150,
-      expiry: 2022,
-      status: true
-    },
-    {
-      id: 102,
-      name: 'Eltrombopag',
-      quantity: 90,
-      price: 550,
-      expiry: 2021,
-      status: true
-    },
-    {
-      id: 103,
-      name: 'Meloxicam',
-      quantity: 85,
-      price: 450,
-      expiry: 2025,
-      status: false
-    },
-    {
-      id: 104,
-      name: 'Allopurinol',
-      quantity: 50,
-      price: 600,
-      expiry: 2023,
-      status: true
-    },
-    {
-      id: 105,
-      name: 'Phenytoin',
-      quantity: 63,
-      price: 250,
-      expiry: 2021,
-      status: false
-    }
-  ];
-  // console.log(data);
-  // data.map((value,index)=> console.log(value.id,value.name));
-  // let filterdata = data.filter((d,i)=>d.expiry >=2022);
-  // console.log(filterdata);
-  // let reducedata = filterdata.reduce((acc,d,i)=>acc+d.price,0);
-  // console.log(reducedata);
-
-  let filterdata = data.filter((d,i)=>d.expiry >=2022);
-  let total = filterdata.reduce((acc,d,i)=>acc+d.price,0);
-
-  // CIRClet 2
-   let empy =[
-    {
-      name: "amit",
-      age: 35,
-      salary: 40000,
-      bonus: 1000,
-      status: true
-    },
-    {
-      name: "ajay",
-      age: 25,
-      salary: 38000,
-      bonus: 2000,
-      status: false
-    },
-    {
-      name: "mayur",
-      age: 23,
-      salary: 50000,
-      bonus: 500,
-      status: true
-    },
-    {
-      name: "jay",
-      age: 29,
-      salary: 35000,
-      bonus: 600,
-      status: true
-    },
-    {
-      name: "raj",
-      age: 33,
-      salary: 22000,
-      bonus: 2000,
-      status: true
-    },
-  ]
-  // empy.map((value,index)=> console.log(value.name , value.age));
-  // let presentempy = empy.filter((d,i)=> d.status === true);
-  // console.log(presentempy);
-  // let expense =presentempy.reduce((acc,d,i)=> acc+d.salary + d.bonus,0);
-  // console.log(expense);
-  // let amount = presentempy.reduce((d,i)=> d.salary + d.bonus,);
-  // console.log(amount);
-
-  let presentempy = empy.filter((d,i)=> d.status === true);
-  let expense =presentempy.reduce((acc,d,i)=> acc+d.salary + d.bonus,0);
-
   
 
   return (
     <>
-    {<table border="1">
-      <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>price</th>
-        <th>expiry</th>
-        <th>total</th>
-      </tr>
-      {
-        filterdata.map((value,index)=>{
-          return(
-            <tr>
-              <td>{value.id}</td>
-              <td>{value.name}</td>
-              <td>{value.price}</td>
-              <td>{value.expiry}</td>
-              {index === 0? <td rowspan="5">{total}</td> :null}
-             
-            </tr>
-          )
-        })
-      }
-      </table>}
-
-
-
-      {/* CRIclet 2 */}
-      {<table border="1">
-      <tr>
-        <th>name</th>
-        <th>age</th>
-        <th>salary</th>
-        <th>bonus</th>
-        <th>amount</th>
-        <th>company expense</th>
-      </tr>
-      {
-        presentempy.map((value,index)=>{
-          let amount = value.salary + value.bonus;
-          return(
-            <tr>
-              <td>{value.name}</td>
-              <td>{value.age}</td>
-              <td>{value.salary}</td>
-              <td>{value.bonus}</td>
-              <td>{amount}</td>
-              {index === 0? <td rowspan="5">{expense}</td> :null}
-             
-            </tr>
-          )
-        })
-      }
-      </table>}
+      <Country /> 
+      <City/>
+        
     </>
   );
 }
